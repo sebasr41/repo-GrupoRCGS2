@@ -1,14 +1,34 @@
 package ar.edu.unju.fi.tp4.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
+
+
+@Entity
+@Table(name="PRODUCTOS")
 @Component
 public class Producto {
+	@OneToMany
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int codigo;
+	@Column(name="codigo")
 	private String nombre;
+	@Column(name="nombre")
 	private double precio;
+	@Column(name="marca")
 	private String marca;
+	@Column(name="stock")
 	private int stock;
+	
 	
 	// Constructor empty
 	public Producto() {
