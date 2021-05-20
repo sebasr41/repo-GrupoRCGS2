@@ -32,7 +32,7 @@ public class Producto {
 	@Column(name="stock")
 	private int stock;
 	@OneToMany(mappedBy = "producto")
-	private List<Compra> compras = new ArrayList<Compras>();
+	private List<Compra> compras = new ArrayList<Compra>();
 	// Constructor empty
 	public Producto() {
 		// TODO Auto-generated constructor stub
