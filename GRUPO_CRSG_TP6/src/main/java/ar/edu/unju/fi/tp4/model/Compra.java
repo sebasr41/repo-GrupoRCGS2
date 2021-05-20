@@ -2,13 +2,14 @@ package ar.edu.unju.fi.tp4.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,9 +21,8 @@ public class Compra {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
 		
-@ManyToOne
-@Column(name = "com_producto")
-@Autowired
+@ManyToOne(fetch = FetchType.LAZY)
+@JoinColumn(name = "pro_codigo")
 private Producto producto;
 
 @Column(name = "com_cantidad")
@@ -76,11 +76,5 @@ private double total;
 	@Override
 	public String toString() {
 		return "Compra [id=" + id + ", cantidad=" + cantidad + ", total=" + total + ", producto=" + producto + "]";
-	}
-	
-	
-	
-	
-	
-	
+	}	
 }

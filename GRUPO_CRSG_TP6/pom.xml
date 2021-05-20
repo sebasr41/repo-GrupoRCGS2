@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ar.edu.unju.fi</groupId>
 	<artifactId>Mamani_Gabriel_A_4148_TP4</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>2.3.10-SNAPSHOT</version>
 	<name>Mamani_Gabriel_A_4148_TP4</name>
 	<description>tp4 - Using Bootstrap</description>
 	<properties>
