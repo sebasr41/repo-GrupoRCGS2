@@ -1,5 +1,8 @@
 package ar.edu.unju.fi.tp4.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Table(name="PRODUCTOS")
 @Component
 public class Producto {
-	@OneToMany
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int codigo;
@@ -28,8 +31,8 @@ public class Producto {
 	private String marca;
 	@Column(name="stock")
 	private int stock;
-	
-	
+	@OneToMany(mappedBy = "producto")
+	private List<Compra> compras = new ArrayList<Compras>();
 	// Constructor empty
 	public Producto() {
 		// TODO Auto-generated constructor stub
