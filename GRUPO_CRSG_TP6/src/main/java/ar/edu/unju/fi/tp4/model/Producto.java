@@ -22,15 +22,20 @@ public class Producto {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int codigo;
-	@Column(name="codigo")
-	private String nombre;
+    private int codigo;
+	
 	@Column(name="nombre")
+	private String nombre;
+	
+	@Column(name="precio")
 	private double precio;
+	
 	@Column(name="marca")
 	private String marca;
+	
 	@Column(name="stock")
 	private int stock;
+	
 	@OneToMany(mappedBy = "producto")
 	private List<Compra> compras = new ArrayList<Compra>();
 	// Constructor empty
